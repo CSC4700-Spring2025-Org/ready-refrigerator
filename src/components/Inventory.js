@@ -283,10 +283,10 @@ export default function Home() {
                   </Typography>
   
                   <Box display={'flex'} justifyContent={'space-between'} width="100%">
-                    <Button variant="contained" onClick={() => handleOpenEdit(item)} sx={{ borderRadius: '10px', backgroundColor: 'transparent', padding: '3px 30px', border: '2px solid #FF939B', color: '#FF939B', boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.0)', textTransform: 'none', fontSize: '16px', fontFamily: 'Poppins', '&:hover': {backgroundColor: 'white', boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.0)'}}}>
+                    <Button variant="contained" onClick={() => handleOpenEdit(item)} sx={{ borderRadius: '10px', backgroundColor: 'transparent', padding: '3px 30px', border: '2px solid #275289', color: '#275289', boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.0)', textTransform: 'none', fontSize: '16px', fontFamily: 'Poppins', '&:hover': {backgroundColor: 'white', boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.0)'}}}>
                       Edit
                     </Button>
-                    <Button variant="contained" onClick={() => handleOpenRemove(item)} sx={{ borderRadius: '10px', backgroundColor: '#ff758c', padding: '3px 25px', border: '2px solid white', boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.0)', textTransform: 'none', fontSize: '16px', fontFamily: 'Poppins', '&:hover': {backgroundColor: '#FFA1A8', boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.0)'} }}>
+                    <Button variant="contained" onClick={() => handleOpenRemove(item)} sx={{ borderRadius: '10px', backgroundColor: '#275289', padding: '3px 25px', border: '2px solid white', boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.0)', textTransform: 'none', fontSize: '16px', fontFamily: 'Poppins', '&:hover': {backgroundColor: '#E0E9FF', boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.0)'} }}>
                       Delete
                     </Button>
                   </Box>
