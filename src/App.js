@@ -1,16 +1,28 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import AuthForm from './AuthForm'; //added for firebase
-import Inventory from './components/Inventory';
-import Navbar from './components/Navbar';
 
+import Navbar from './components/Navbar';
+import Recipes from './components/Recipes';
+import Inventory from './components/Inventory';
+import AIAssistant from './components/AIAssistant';
+// import AuthForm from './AuthForm'; // Uncomment if using
+
+//updated function with routing for navbar links
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Inventory />
+    <Router>
+      <div className="App">
+        <Navbar />
         {/* <AuthForm /> */}
-    </div>
+
+        <Routes>
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/ai-assistant" element={<AIAssistant />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
