@@ -15,8 +15,14 @@
     "firebase": "^11.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+<<<<<<< HEAD
     "react-router-dom": "^7.5.0",
     "react-scripts": "5.0.1",
+=======
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-scripts": "^5.0.1",
+>>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
     "web-vitals": "^2.1.4"
   },
   "scripts": {
