@@ -21,3 +21,17 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#.env
+.env
+
+# Exclude virtual environment directory
+venv/
+
+# Exclude Python cache files
+__pycache__/
+*.py[cod]
+
+# Exclude logs, OS-specific files, etc.
+*.log
+.DS_Store
