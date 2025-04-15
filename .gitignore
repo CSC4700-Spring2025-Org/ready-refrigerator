@@ -35,3 +35,11 @@ __pycache__/
 # Exclude logs, OS-specific files, etc.
 *.log
 .DS_Store
+# Ignore environment variables file
+.env
+
+# Ignore virtual environment folder
+venv/
+
+# Ignore Python cache
+__pycache__/
