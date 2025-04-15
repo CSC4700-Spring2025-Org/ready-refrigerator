@@ -32,7 +32,7 @@ function App() {
           <>
             <Navbar user={user} onSignOut={handleSignOut} />
             <Routes>
-              <Route path="/" element={<Recipes />} /> {/* 👈 Default page */}
+              <Route path="/" element={<Recipes />} />
               <Route path="/recipes" element={<Recipes />} />
               <Route path="/inventory" element={<Inventory />} />
               <Route path="/ai-assistant" element={<AIAssistant />} />
@@ -47,6 +47,3 @@ function App() {
 }
 
 export default App;
-
-
-
