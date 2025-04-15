@@ -68,3 +68,41 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Updated Instructions on How to Run this program:
+
+1 - Navigate into the project directory.
+
+2 - Backend Setup:
+Change to the backend directory:
+cd backend
+
+3 - Create and activate a virtual environment:
+
+On macOS/Linux:
+python -m venv venv
+source venv/bin/activate
+
+On Windows:
+python -m venv venv
+venv\Scripts\activate
+
+Install the Python dependencies:
+pip install -r requirements.txt
+
+4 - Create a .env file in the backend directory with the necessary environment variable(s), that contains:
+
+OPENAI_API_KEY=(insert secret key here)
+Run the Flask server:
+python app.py
+
+The backend should now be running at http://127.0.0.1:5000.
+
+5 - Frontend Setup: Change to the frontend directory 
+Install the npm dependencies:
+npm install
+
+6 - Start the React application:
+npm start
+
+The React app should now launch in your browser, typically at http://localhost:3000, and communicate with the backend.

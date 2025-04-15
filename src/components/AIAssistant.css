@@ -1,9 +1,12 @@
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #e0eafc, #cfdef3);
     margin: 0;
     padding: 0;
 }
+
+/* Header styles */
 .header {
     display: flex;
     justify-content: space-between;
@@ -14,6 +17,8 @@ body {
 .header h1 {
     margin: 0;
 }
+
+/* Navigation links */
 .nav-links .link-button {
     background: none;
     border: none;
@@ -23,6 +28,8 @@ body {
     margin-left: 20px;
     font-size: 16px;
 }
+
+/* Sign-out button */
 .sign-out-button {
     background-color: black;
     color: white;
@@ -31,11 +38,17 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+
+/* Main content container */
 .main-content {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 50px; 
+    /* You could lower this further if you like, 
+       but 50px is more moderate than 250px. */
     padding-bottom: 50px;
 }
+
+/* Logo container */
 .circle {
     width: 100px;
     height: 100px;
@@ -44,46 +57,42 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 20px auto; /* Center the circle and add space below */
+    margin: 0 auto 20px auto;
 }
 .logo {
-    width: 50px; /* Adjust the size of the logo */
+    width: 50px;
     height: 50px;
 }
+
+/* Heading and paragraph styles */
 h2 {
     font-size: 45px;
 }
 h3 {
     font-size: 37px;
-    color: #444444
+    color: #444444;
 }
 p {
     padding-top: 10px;
     font-size: 18px;
-    color: #444444
-
+    color: #444444;
 }
+
+/* Chat input box */
 .chat-box {
-    padding-top: 250px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    /* Removed "padding-top: 250px;" so the bubble isn't forced too low. */
 }
-.chat-bubble {
-    background-color: #f1f1f1;
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 20px;
-    width: 60%;
-}
-input[type="text"] {
+.chat-box input[type="text"] {
     width: calc(100% - 40px);
     padding: 10px;
     border-radius: 25px;
     border: none;
     margin-right: -35px;
 }
-button {
+.chat-box button {
     background-color: #C1E3F3;
     color: black;
     border: none;
@@ -91,4 +100,33 @@ button {
     border-radius: 25px;
     margin-left: -35px;
     cursor: pointer;
+}
+
+/* Chat bubble for displaying recipes */
+.chat-bubble {
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    text-align: left;
+    max-height: 80vh; /* 80% of viewport height for scrolling */
+    overflow-y: auto;
+}
+
+/* Recipe text styling */
+.recipe-text {
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+/* Center headings rendered by ReactMarkdown */
+.recipe-text h1,
+.recipe-text h2,
+.recipe-text h3 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
