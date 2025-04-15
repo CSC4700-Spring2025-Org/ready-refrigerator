@@ -73,7 +73,6 @@ function App() {
   );
 }
 
-// Wrap the App component with Router so that useNavigate works correctly
 export default function WrappedApp() {
   return (
     <Router>
