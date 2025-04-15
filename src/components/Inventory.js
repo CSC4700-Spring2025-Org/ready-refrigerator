@@ -296,7 +296,7 @@ export default function Home() {
         <Box borderRadius={'15px'} boxShadow={'0px 4px 6px rgba(0, 0, 0, 0.1)'} width="1310px" height="500px" bgcolor={'#fff'} overflow={'hidden'} py={2} px={3}>
           <Box display={'flex'} paddingBottom={1} position="sticky" top={0} bgcolor={'#fff'} zIndex={1}>
             <Typography fontWeight={'bold'} fontFamily="Poppins" px={5}>Name</Typography>
-            <Typography fontWeight={'bold'} fontFamily="Poppins" px={27}>Quantity</Typography>
+            <Typography fontWeight={'bold'} fontFamily="Poppins" px={33.5}>Quantity</Typography>
           </Box>
           <Stack spacing={1} overflow={'auto'} sx={{ height: '100%' }}>
             {filteredPantry.map((item) => (
