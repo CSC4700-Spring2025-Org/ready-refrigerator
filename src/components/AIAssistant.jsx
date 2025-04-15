@@ -1,11 +1,37 @@
 <<<<<<< HEAD
-import React from 'react';
-import './AIAssistant.css'; // Import the CSS file
-import LogoRR from './LogoRR.svg'; // Adjust the path to your logo image
+import React, { useState } from 'react';
+import './AIAssistant.css';
+import LogoRR from './LogoRR.svg';
 
 function AIAssistant() {
+  const [dietaryRestriction, setDietaryRestriction] = useState(false);
+  const [macroEfficiency, setMacroEfficiency] = useState(false);
+
   return (
     <div>
+      {/* Toggle switches container */}
+      <div className="toggle-container">
+        <label className="toggle-label">
+          <input 
+            type="checkbox" 
+            checked={dietaryRestriction} 
+            onChange={() => setDietaryRestriction(!dietaryRestriction)} 
+          />
+          <span className="toggle-custom" />
+          Dietary Restriction Considerations
+        </label>
+
+        <label className="toggle-label">
+          <input 
+            type="checkbox" 
+            checked={macroEfficiency} 
+            onChange={() => setMacroEfficiency(!macroEfficiency)} 
+          />
+          <span className="toggle-custom" />
+          Macroefficiency
+        </label>
+      </div>
+
       <div className="main-content">
         <div className="circle">
           <img src={LogoRR} alt="Ready Refrigerator Logo" className="logo" />

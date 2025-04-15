@@ -50,7 +50,6 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
-<<<<<<< HEAD
 .main-content {
     text-align: center;
     padding-top: 50px;
@@ -113,7 +112,7 @@ p {
 
 }
 .chat-box {
-    padding-top: 250px;
+    padding-top: 200px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
