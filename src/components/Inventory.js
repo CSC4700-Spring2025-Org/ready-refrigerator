@@ -219,8 +219,7 @@ export default function Home() {
             </Box>
           </Modal>
           <Box width="1310px" height="50px" display={'flex'} justifyContent={'flex-start'} alignItems={'center'} paddingTop={6} paddingBottom={5}>
-            <Typography variant={'h4'} color={'#000000'} textAlign={'left'} fontFamily={'Poppins'}>
-            <span style={{ fontWeight: 'bold' }}>Name's</span> Refrigerator and Inventory
+            <Typography variant={'h4'} color={'#000000'} textAlign={'left'} fontFamily={'Poppins'}> What's in your refrigerator?
             </Typography>
           </Box>
           <Box display={'flex'} alignItems={'center'} gap={1} width="1310px" mb={3}>

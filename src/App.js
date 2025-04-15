@@ -30,10 +30,7 @@ function App() {
       <div className="App">
         {user ? (
           <>
-            <Navbar />
-            <p>Welcome, {user.email}!</p>
-            <button onClick={handleSignOut}>Sign Out</button>
-
+            <Navbar user={user} onSignOut={handleSignOut} />
             <Routes>
               <Route path="/recipes" element={<Recipes />} />
               <Route path="/inventory" element={<Inventory />} />
@@ -49,3 +46,5 @@ function App() {
 }
 
 export default App;
+
+
