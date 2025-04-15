@@ -65,34 +65,40 @@ export default function Home() {
     const handleCloseRemove = () => setOpenRemove(false)
   
     const updatePantry = async () => {
-      const snapshot = query(collection(firestore, 'pantry'))
-      const docs = await getDocs(snapshot)
-      const pantryList = []
-      docs.forEach((doc) => {
-        pantryList.push({ "name": doc.id, ...doc.data() })
-      })
-      console.log(pantryList)
-      setPantry(pantryList)
-    }
+      const userId = auth.currentUser.uid;
+      const pantryRef = collection(firestore, 'users', userId, 'pantry');
+      const snapshot = await getDocs(pantryRef);
+    
+      const pantryList = [];
+      snapshot.forEach((doc) => {
+        pantryList.push({ name: doc.id, ...doc.data() });
+      });
+    
+      setPantry(pantryList);
+    };
+    
   
     useEffect(() => {
       updatePantry()
     }, [])
   
     const addItem = async (item, quantity) => {
-      if (quantity < 0) quantity = 0; // Ensure quantity is not negative
-      const itemLower = item.toLowerCase()
-      const docRef = doc(collection(firestore, 'pantry'), itemLower)
-      // Check if item exists
-      const docSnap = await getDoc(docRef)
+      if (quantity < 0) quantity = 0;
+      const itemLower = item.toLowerCase();
+      const userId = auth.currentUser.uid;
+      const docRef = doc(firestore, 'users', userId, 'pantry', itemLower);
+    
+      const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        const { count } = docSnap.data()
-        await setDoc(docRef, { count: count + quantity })
+        const { count } = docSnap.data();
+        await setDoc(docRef, { count: count + quantity });
       } else {
-        await setDoc(docRef, { count: quantity })
+        await setDoc(docRef, { count: quantity });
       }
-      await updatePantry()
-    }
+    
+      await updatePantry(); // Refresh UI
+    };
+    
   
     const editItem = async (item, newName, newQuantity) => {
       if (newQuantity < 0) newQuantity = 0; // Ensure quantity is not negative
@@ -115,11 +121,13 @@ export default function Home() {
     }
   
     const removeItem = async (item) => {
-      const docRef = doc(collection(firestore, 'pantry'), item.toLowerCase())
-      await deleteDoc(docRef)
-      await updatePantry()
-      handleCloseRemove()
-    }
+      const userId = auth.currentUser.uid;
+      const docRef = doc(firestore, 'users', userId, 'pantry', item.toLowerCase());
+      await deleteDoc(docRef);
+      await updatePantry();
+      handleCloseRemove();
+    };
+    
   
     const filteredPantry = pantry.filter(({ name }) =>
       name.toLowerCase().includes(searchQuery.toLowerCase())
