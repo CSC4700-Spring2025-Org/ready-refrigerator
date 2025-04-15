@@ -5,3 +5,4 @@ generate:
     package: "@firebasegen/default-connector"
     packageJsonDir: ../..
     react: true
+    angular: true
