@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './firebase';
 
@@ -13,7 +13,6 @@ import AuthForm from './AuthForm';
 
 function App() {
   const [user, setUser] = useState(null);
-  // Flag to track if we've already redirected after login
   const [redirectDone, setRedirectDone] = useState(false);
   const navigate = useNavigate();
 
@@ -28,7 +27,7 @@ function App() {
         }
       } else {
         setUser(null);
-        // Optionally reset the redirect flag upon sign-out
+        // Reset the redirect flag upon sign-out
         setRedirectDone(false);
       }
     });
@@ -55,18 +54,9 @@ function App() {
   );
 }
 
-export default function WrappedApp() {
-  return (
-    <Router>
-      <App />
-    </Router>
-=======
-
-// Routes for authenticated users
 function AppRoutes() {
   return (
     <Routes>
-      {/* If necessary, you can still have "/" render Recipes */}
       <Route path="/" element={<Recipes />} />
       <Route path="/recipes" element={<Recipes />} />
       <Route path="/inventory" element={<Inventory />} />
@@ -75,4 +65,10 @@ function AppRoutes() {
   );
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}

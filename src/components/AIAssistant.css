@@ -1,18 +1,12 @@
-<<<<<<< HEAD
-=======
 /* Base styles */
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #e0eafc, #cfdef3);
     margin: 0;
     padding: 0;
 }
-<<<<<<< HEAD
-=======
 
 /* Header styles */
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
 .header {
     display: flex;
     justify-content: space-between;
@@ -23,11 +17,8 @@ body {
 .header h1 {
     margin: 0;
 }
-<<<<<<< HEAD
-=======
 
 /* Navigation links */
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
 .nav-links .link-button {
     background: none;
     border: none;
@@ -37,11 +28,8 @@ body {
     margin-left: 20px;
     font-size: 16px;
 }
-<<<<<<< HEAD
-=======
 
 /* Sign-out button */
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
 .sign-out-button {
     background-color: black;
     color: white;
@@ -50,24 +38,15 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+
+/* Main content container */
 .main-content {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
 }
-=======
-
-/* Main content container */
-.main-content {
-    text-align: center;
-    padding-top: 50px; 
-    /* You could lower this further if you like, 
-       but 50px is more moderate than 250px. */
-    padding-bottom: 50px;
-}
 
 /* Logo container */
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
 .circle {
     width: 100px;
     height: 100px;
@@ -76,56 +55,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
     margin: 0 auto 20px auto; /* Center the circle and add space below */
 }
 .logo {
-    width: 50px; /* Adjust the size of the logo */
-    height: 50px;
-}
-=======
-    margin: 0 auto 20px auto;
-}
-.logo {
-    width: 50px;
+    width: 50px; /* Adjust logo size as needed */
     height: 50px;
 }
 
 /* Heading and paragraph styles */
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
 h2 {
     font-size: 45px;
 }
 h3 {
     font-size: 37px;
-<<<<<<< HEAD
-    color: #444444
-=======
     color: #444444;
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
 }
 p {
     padding-top: 10px;
     font-size: 18px;
-<<<<<<< HEAD
-    color: #444444
-
-}
-.chat-box {
-    padding-top: 200px;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-.chat-bubble {
-    background-color: #f1f1f1;
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 20px;
-    width: 60%;
-}
-input[type="text"] {
-=======
     color: #444444;
 }
 
@@ -134,21 +81,15 @@ input[type="text"] {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    /* Removed "padding-top: 250px;" so the bubble isn't forced too low. */
 }
 .chat-box input[type="text"] {
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
     width: calc(100% - 40px);
     padding: 10px;
     border-radius: 25px;
     border: none;
     margin-right: -35px;
 }
-<<<<<<< HEAD
-button {
-=======
 .chat-box button {
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
     background-color: #C1E3F3;
     color: black;
     border: none;
@@ -157,8 +98,6 @@ button {
     margin-left: -35px;
     cursor: pointer;
 }
-<<<<<<< HEAD
-=======
 
 /* Chat bubble for displaying recipes */
 .chat-bubble {
@@ -176,7 +115,7 @@ button {
 .recipe-text {
     font-size: 16px;
     line-height: 1.5;
-    white-space: pre-wrap;
+    white-space: pre-wrap; /* Preserves newlines and wraps long lines */
     margin: 0;
 }
 
@@ -188,4 +127,3 @@ button {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
->>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
