@@ -75,7 +75,7 @@ function AIAssistant() {
             checked={useMacroEfficient}
             onChange={() => setUseMacroEfficient(!useMacroEfficient)}
           />
-          <label htmlFor="macroEfficient">MacroEfficient</label>
+          <label htmlFor="macroEfficient">Macro Efficient</label>
         </div>
       </div>
 
