@@ -6,6 +6,8 @@ import LogoRR from './LogoRR.svg';
 function AIAssistant() {
   const [inputValue, setInputValue] = useState("");
   const [recipeResponse, setRecipeResponse] = useState("");
+  const [useDietaryRestrictions, setUseDietaryRestrictions] = useState(false);
+  const [useMacroEfficient, setUseMacroEfficient] = useState(false);
 
   const handleSend = async () => {
     const ingredientsArray = inputValue
@@ -17,13 +19,16 @@ function AIAssistant() {
       const response = await fetch("http://127.0.0.1:5000/generate-recipes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ingredients: ingredientsArray })
+        body: JSON.stringify({ 
+          ingredients: ingredientsArray,
+          dietary: useDietaryRestrictions,
+          macroEfficient: useMacroEfficient
+        })
       });
       if (!response.ok) {
         throw new Error(`Server error: ${response.status}`);
       }
       const data = await response.json();
-      // Clean up extra blank lines from the response.
       let cleanedRecipe = data.recipes.trim().replace(/\n\s*\n+/g, "\n\n");
       setRecipeResponse(cleanedRecipe);
     } catch (error) {
@@ -51,6 +56,30 @@ function AIAssistant() {
         />
         <button onClick={handleSend}>Send</button>
       </div>
+
+      {/* Toggle Switches */}
+      <div className="toggle-options">
+        <div>
+          <input
+            type="checkbox"
+            id="dietary"
+            checked={useDietaryRestrictions}
+            onChange={() => setUseDietaryRestrictions(!useDietaryRestrictions)}
+          />
+          <label htmlFor="dietary">Dietary Restrictions</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="macroEfficient"
+            checked={useMacroEfficient}
+            onChange={() => setUseMacroEfficient(!useMacroEfficient)}
+          />
+          <label htmlFor="macroEfficient">MacroEfficient</label>
+        </div>
+      </div>
+
+
       {recipeResponse && (
         <div className="chat-bubble">
           <div className="recipe-text">
