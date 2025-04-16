@@ -68,3 +68,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Instructions on How to Run the Application
+• Clone the repository and change into its folder
+    - git clone <https://github.com/CSC4700-Spring2025-Org/ready-refrigerator.git>
+    - cd ready‑refrigerator
+
+• Set up the backend
+    – cd backend
+    – python3 -m venv venv
+    – source venv/bin/activate (or venv\Scripts\activate on Windows)
+    – pip install -r requirements.txt
+    – create a .env file containing OPENAI_API_KEY=your_key_here
+    – python3 app.py (backend runs at http://127.0.0.1:5000)
+
+• Set up the frontend
+– return to project root (cd ..)
+– npm install
+– npm start (app opens at http://localhost:3000)
+
+Note: without a valid OpenAI API key in .env, recipe generation will not function.
