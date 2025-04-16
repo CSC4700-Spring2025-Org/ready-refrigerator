@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './firebase';
 
@@ -15,19 +10,6 @@ import Recipes from './components/Recipes';
 import Inventory from './components/Inventory';
 import AIAssistant from './components/AIAssistant';
 import AuthForm from './AuthForm';
-
-// Routes for authenticated users
-function AppRoutes() {
-  return (
-    <Routes>
-      {/* If necessary, you can still have "/" render Recipes */}
-      <Route path="/" element={<Recipes />} />
-      <Route path="/recipes" element={<Recipes />} />
-      <Route path="/inventory" element={<Inventory />} />
-      <Route path="/ai-assistant" element={<AIAssistant />} />
-    </Routes>
-  );
-}
 
 function App() {
   const [user, setUser] = useState(null);
@@ -78,6 +60,19 @@ export default function WrappedApp() {
     <Router>
       <App />
     </Router>
+=======
+
+// Routes for authenticated users
+function AppRoutes() {
+  return (
+    <Routes>
+      {/* If necessary, you can still have "/" render Recipes */}
+      <Route path="/" element={<Recipes />} />
+      <Route path="/recipes" element={<Recipes />} />
+      <Route path="/inventory" element={<Inventory />} />
+      <Route path="/ai-assistant" element={<AIAssistant />} />
+    </Routes>
   );
 }
 
+export default App;
