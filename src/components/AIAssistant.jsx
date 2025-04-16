@@ -1,3 +1,50 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import './AIAssistant.css';
+import LogoRR from './LogoRR.svg';
+
+function AIAssistant() {
+  const [dietaryRestriction, setDietaryRestriction] = useState(false);
+  const [macroEfficiency, setMacroEfficiency] = useState(false);
+
+  return (
+    <div>
+      {/* Toggle switches container */}
+      <div className="toggle-container">
+        <label className="toggle-label">
+          <input 
+            type="checkbox" 
+            checked={dietaryRestriction} 
+            onChange={() => setDietaryRestriction(!dietaryRestriction)} 
+          />
+          <span className="toggle-custom" />
+          Dietary Restriction Considerations
+        </label>
+
+        <label className="toggle-label">
+          <input 
+            type="checkbox" 
+            checked={macroEfficiency} 
+            onChange={() => setMacroEfficiency(!macroEfficiency)} 
+          />
+          <span className="toggle-custom" />
+          Macroefficiency
+        </label>
+      </div>
+
+      <div className="main-content">
+        <div className="circle">
+          <img src={LogoRR} alt="Ready Refrigerator Logo" className="logo" />
+        </div>
+        <h2>Hi there!</h2>
+        <h3>Can I help you with anything?</h3>
+        <p>Ready to help you create delicious meals with what you have in your fridge. Let's get cooking!</p>
+        <div className="chat-box">
+          <input type="text" placeholder="Ask Ready Refrigerator anything..." />
+          <button>Send</button>
+        </div>
+      </div>
+=======
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './AIAssistant.css';
@@ -62,6 +109,7 @@ function AIAssistant() {
           </div>
         </div>
       )}
+>>>>>>> fbe792ad2b4d5db7941f7ee6fd6ed65fb911f0d2
     </div>
   );
 }
